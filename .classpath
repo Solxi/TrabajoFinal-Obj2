@@ -5,5 +5,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="C:/Users/Note/Desktop/joda-time-2.9/joda-time-2.9.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Note/Desktop/joda-time-2.9/joda-time-2.9-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Note/Desktop/mockito-all-1.9.5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

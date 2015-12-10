@@ -1,14 +1,29 @@
 package trabajoFinal;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Buscador {
 	
-	private Busqueda criterioDeBusqueda;
+	private List<Hotel> hoteles;
 
-	public Busqueda getCriterioDeBusqueda() {
-		return criterioDeBusqueda;
+	public Buscador() {
+		this.hoteles = new ArrayList<Hotel>();
 	}
 
-	public void setCriterioDeBusqueda(Busqueda criterioDeBusqueda) {
-		this.criterioDeBusqueda = criterioDeBusqueda;
+	public List<Hotel> buscar(Busqueda criterioDeBusqueda) {
+		List<Hotel> hotelesQueAplican = new ArrayList<Hotel>();
+		for (Hotel hotel : hoteles) {
+			if(criterioDeBusqueda.aplicaParaHotel(hotel)){
+				hotelesQueAplican.add(hotel);
+			}
+		}
+		return hotelesQueAplican;
 	}
+
+	public void agregarHotel(Hotel hotel) {
+		this.hoteles.add(hotel);		
+	}
+	
+	public List<Hotel> getHoteles()	{ return this.hoteles; }
 }

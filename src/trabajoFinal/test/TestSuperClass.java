@@ -1,12 +1,7 @@
 package trabajoFinal.test;
 
-import static org.junit.Assert.*;
-
-import java.time.LocalTime;
-
-import org.joda.time.DateTime;
+import org.joda.time.LocalTime;
 import org.junit.Before;
-import org.junit.Test;
 
 import trabajoFinal.Habitacion;
 import trabajoFinal.Hotel;
@@ -22,37 +17,29 @@ public class TestSuperClass {
 	private Habitacion habitacion03;
 	private Habitacion habitacion04;
 	
-	private LocalTime checkIn = null;
-	private LocalTime checkOut = null;
+	private LocalTime checkInSheraton = new LocalTime(18, 30);
+	private LocalTime checkOutSheraton = new LocalTime(12, 30);
+	private LocalTime checkInContinental = new LocalTime(18, 00);
+	private LocalTime checkOutContinental = new LocalTime(12, 00);
 
 
 	@Before
 	public void setUp() throws Exception {
-		this.hotelSheraton = new Hotel("Sheraton", "Argentina", "Bs.As", "lavalle 133", "sheraton@gmail.com", 5, checkIn, checkOut);
-		this.hotelContinental = new Hotel("Continental", "Argentina", "Rosario", "ruiz 35", "continental@gmail.com", 3, checkIn, checkOut);
+		this.sistema = new Sistema();
+		this.hotelSheraton = new Hotel("Sheraton", "Argentina", "Bs.As", "lavalle 133", "sheraton@gmail.com", 5, checkInSheraton, checkOutSheraton);
+		this.hotelContinental = new Hotel("Continental", "Argentina", "Rosario", "ruiz 35", "continental@gmail.com", 3, checkInContinental, checkOutContinental);
 		this.habitacion01 = new Habitacion(01, 20.00);
-		this.habitacion02 = new Habitacion(01, 50.00);
-		this.habitacion03 = new Habitacion(01, 80.00);
-		this.habitacion04 = new Habitacion(01, 100.00);
-		
-		this.hotelContinental.agregarHabitacion(habitacion01);
-		this.hotelContinental.agregarHabitacion(habitacion02);
-		this.hotelSheraton.agregarHabitacion(habitacion03);
-		this.hotelSheraton.agregarHabitacion(habitacion04);
+		this.habitacion02 = new Habitacion(02, 50.00);
+		this.habitacion03 = new Habitacion(03, 80.00);
+		this.habitacion04 = new Habitacion(04, 100.00);
 	}
 
-	public Hotel hotelSheraton() { return hotelSheraton; }
-	public Hotel hotelContinental() { return hotelContinental; }
-	public Sistema sistema() { return sistema; }
+	public Hotel hotelSheraton() 	 { return hotelSheraton; }
+	public Hotel hotelContinental()  { return hotelContinental; }
+	public Sistema sistema() 		 { return sistema; }
 	public Habitacion habitacion01() { return habitacion01; }
 	public Habitacion habitacion02() { return habitacion02; }
 	public Habitacion habitacion03() { return habitacion03; }
 	public Habitacion habitacion04() { return habitacion04; }
 	 
-
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
-
 }
